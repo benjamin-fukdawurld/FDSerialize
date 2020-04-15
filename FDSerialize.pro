@@ -7,22 +7,20 @@
 TARGET = FDSerialize
 TEMPLATE = lib
 CONFIG += console c++17
-CONFIG += staticlib
 CONFIG -= app_bundle
 CONFIG -= qt
 
-DESTDIR = build/lib
-MAKEFILE = build/makefiles/$${TARGET}
-OBJECTS_DIR = build/.obj/$${TARGET}
+DESTDIR = ../build/lib
+MAKEFILE = ../build/makefiles/$${TARGET}
+OBJECTS_DIR = ../build/obj/$${TARGET}
 
 INCLUDEPATH += include
 
 SOURCES +=
 
 HEADERS += \
-        include/FDSerialize/FDSerialize.h \
+    include/FDSerialize/FDSerialize.h \
     include/FDSerialize/SerializerBase.h
-
 
 unix {
     target.path = /usr/lib
