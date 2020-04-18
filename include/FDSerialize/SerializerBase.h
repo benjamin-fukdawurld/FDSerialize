@@ -4,43 +4,89 @@
 #include <utility>
 #include <cstddef>
 #include <string>
+#include <memory>
 
 namespace FDSerialize
 {
     template<typename Serializer>
-    struct SerializerBase
+    class SerializerBase
     {
-        typedef typename Serializer::Value Value;
+        public:
+            typedef SerializerBase<Serializer> SerializerType;
+            typedef typename Serializer::Allocator Allocator;
+            typedef typename Serializer::Document Document;
+            typedef typename Serializer::Value Value;
 
-        template<typename T>
-        static Value serialize(T &&obj)
-        {
-            return Serializer::serialize(std::forward<T>(obj));
-        }
+        protected:
+            Serializer m_serializer;
 
-        template<typename T>
-        static Value serialize(const T &obj)
-        {
-            return Serializer::serialize(obj);
-        }
+        public:
+            SerializerBase() = default;
 
-        template<typename T>
-        static Value serialize(T obj[], size_t len)
-        {
-            return Serializer::serialize(obj, len);
-        }
+            const Document &getCurrentDocument() const
+            {
+                return m_serializer.getCurrentDocument();
+            }
 
-        template<typename T>
-        static bool unserialize(const Value &val, T &out, std::string *err = nullptr)
-        {
-            return Serializer::unserialize(val, out, err);
-        }
+            Allocator &getAllocator()
+            {
+                return m_serializer.getAllocator();
+            }
 
-        template<typename T>
-        static bool unserialize(const Value &val, T out[], size_t len, std::string *err = nullptr)
-        {
-            return Serializer::unserialize(val, out, len, err);
-        }
+            void clearMemory()
+            {
+                m_serializer.clearMemory();
+            }
+
+            bool parseFile(const std::string_view path, std::string *err = nullptr)
+            {
+                return m_serializer.parseFile(path, err);
+            }
+
+            bool parseString(const std::string_view str, std::string *err = nullptr)
+            {
+                return m_serializer.parseFile(str, err);
+            }
+
+            std::string print(const Value &val)
+            {
+                return m_serializer.print(val);
+            }
+
+            void save(const Value &val, const std::string_view path)
+            {
+                m_serializer.save(val, path);
+            }
+
+            template<typename T>
+            Value serialize(T &&obj)
+            {
+                return m_serializer.serialize(std::forward<T>(obj), *this);
+            }
+
+            template<typename T>
+            Value serialize(const T &obj)
+            {
+                return m_serializer.serialize(obj, *this);
+            }
+
+            template<typename T>
+            Value serialize(T obj[], size_t len)
+            {
+                return m_serializer.serialize(obj, len, *this);
+            }
+
+            template<typename T>
+            bool unserialize(const Value &val, T &out, std::string *err = nullptr)
+            {
+                return m_serializer.unserialize(val, out, *this, err);
+            }
+
+            template<typename T>
+            bool unserialize(const Value &val, T out[], size_t len, std::string *err = nullptr)
+            {
+                return m_serializer.unserialize(val, out, len, *this, err);
+            }
     };
 }
 
