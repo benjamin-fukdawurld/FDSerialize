@@ -19,9 +19,27 @@ namespace FDSerialize
 
         protected:
             Serializer m_serializer;
+            void *m_userData;
 
         public:
             SerializerBase() = default;
+
+            void *getUserData() const
+            {
+                return m_userData;
+            }
+
+            template<typename T>
+            void *getUserDataAs() const
+            {
+                return reinterpret_cast<T*>(m_userData);
+            }
+
+            template<typename T>
+            void setUserData(T *data)
+            {
+                m_userData = reinterpret_cast<void *>(data);
+            }
 
             const Document &getCurrentDocument() const
             {
