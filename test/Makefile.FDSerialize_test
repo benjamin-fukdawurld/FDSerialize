@@ -703,14 +703,60 @@ compiler_clean:
 		../../thirdparty/googletest/googletest/include/gtest/gtest-typed-test.h \
 		../../thirdparty/googletest/googletest/include/gtest/gtest_pred_impl.h \
 		FDSerialize_test.h \
+		../../FDJson/test/FDJson_test.h \
+		../../FDJson/test/test_primitive.h \
+		../../FDJson/include/FDJson/Json_primitive.h \
+		../../FDJson/include/FDJson/Json_primitive_fwd.h \
+		../../thirdparty/rapidjson/include/rapidjson/fwd.h \
+		../../thirdparty/rapidjson/include/rapidjson/rapidjson.h \
+		../../thirdparty/rapidjson/include/rapidjson/msinttypes/stdint.h \
+		../../thirdparty/rapidjson/include/rapidjson/msinttypes/inttypes.h \
+		../../FDJson/include/FDJson/FDJson.h \
+		../include/FDSerialize/SerializerBase.h \
+		../../FDJson/include/FDJson/JsonSerializer.h \
+		../../FDJson/include/FDJson/Json_fwd.h \
+		../../FDJson/include/FDJson/Json_array_fwd.h \
+		../../FDJson/include/FDJson/Json_list_fwd.h \
+		../../FDJson/include/FDJson/Json_tuple_fwd.h \
+		../../FDJson/include/FDJson/Json_set_fwd.h \
+		../../FDJson/include/FDJson/Json_map_fwd.h \
+		../../thirdparty/rapidjson/include/rapidjson/document.h \
+		../../thirdparty/rapidjson/include/rapidjson/reader.h \
+		../../thirdparty/rapidjson/include/rapidjson/allocators.h \
+		../../thirdparty/rapidjson/include/rapidjson/stream.h \
+		../../thirdparty/rapidjson/include/rapidjson/encodings.h \
+		../../thirdparty/rapidjson/include/rapidjson/encodedstream.h \
+		../../thirdparty/rapidjson/include/rapidjson/memorystream.h \
+		../../thirdparty/rapidjson/include/rapidjson/internal/clzll.h \
+		../../thirdparty/rapidjson/include/rapidjson/internal/meta.h \
+		../../thirdparty/rapidjson/include/rapidjson/internal/stack.h \
+		../../thirdparty/rapidjson/include/rapidjson/internal/swap.h \
+		../../thirdparty/rapidjson/include/rapidjson/internal/strtod.h \
+		../../thirdparty/rapidjson/include/rapidjson/internal/ieee754.h \
+		../../thirdparty/rapidjson/include/rapidjson/internal/biginteger.h \
+		../../thirdparty/rapidjson/include/rapidjson/internal/diyfp.h \
+		../../thirdparty/rapidjson/include/rapidjson/internal/pow10.h \
+		../../thirdparty/rapidjson/include/rapidjson/error/error.h \
+		../../thirdparty/rapidjson/include/rapidjson/internal/strfunc.h \
+		../../FDJson/test/test_array.h \
+		../../FDJson/include/FDJson/Json_array.h \
+		../../FDJson/test/test_list.h \
+		../../FDJson/include/FDJson/Json_list.h \
+		../../FDJson/test/test_tuple.h \
+		../../FDJson/include/FDJson/Json_tuple.h \
+		../../FDJson/test/test_set.h \
+		../../FDJson/include/FDJson/Json_set.h \
+		../../FDJson/test/test_map.h \
+		../../FDJson/include/FDJson/Json_map.h \
+		../../FDJson/test/test_custom.h \
+		../../FDJson/include/FDJson/Json_utils.h \
 		../../FDXml/test/FDXml_test.h \
 		../../FDXml/test/test_primitive.h \
 		../../FDXml/include/FDXml/Xml_primitive_fwd.h \
-		../../FDXml/include/FDXml/XmlSerializer.h \
-		../include/FDSerialize/SerializerBase.h \
-		../../FDXml/include/FDXml/Xml_fwd.h \
 		../../FDXml/include/FDXml/FDXml.h \
 		../../thirdparty/rapidxml/rapidxml.hpp \
+		../../FDXml/include/FDXml/XmlSerializer.h \
+		../../FDXml/include/FDXml/Xml_fwd.h \
 		../../FDXml/include/FDXml/Xml_array_fwd.h \
 		../../FDXml/include/FDXml/Xml_list_fwd.h \
 		../../FDXml/include/FDXml/Xml_tuple_fwd.h \
@@ -734,53 +780,7 @@ compiler_clean:
 		../../FDXml/include/FDXml/Xml_utils.h \
 		../../FDXml/include/FDXml/Xml_map.h \
 		../../thirdparty/rapidxml/rapidxml_print.hpp \
-		../../FDCore/include/FDCore/FileUtils.h \
-		../../FDJson/test/FDJson_test.h \
-		../../FDJson/test/test_primitive.h \
-		../../FDJson/include/FDJson/Json_primitive.h \
-		../../FDJson/include/FDJson/Json_primitive_fwd.h \
-		../../thirdparty/rapidjson/include/rapidjson/fwd.h \
-		../../thirdparty/rapidjson/include/rapidjson/rapidjson.h \
-		../../thirdparty/rapidjson/include/rapidjson/msinttypes/stdint.h \
-		../../thirdparty/rapidjson/include/rapidjson/msinttypes/inttypes.h \
-		../../thirdparty/rapidjson/include/rapidjson/document.h \
-		../../thirdparty/rapidjson/include/rapidjson/reader.h \
-		../../thirdparty/rapidjson/include/rapidjson/allocators.h \
-		../../thirdparty/rapidjson/include/rapidjson/stream.h \
-		../../thirdparty/rapidjson/include/rapidjson/encodings.h \
-		../../thirdparty/rapidjson/include/rapidjson/encodedstream.h \
-		../../thirdparty/rapidjson/include/rapidjson/memorystream.h \
-		../../thirdparty/rapidjson/include/rapidjson/internal/clzll.h \
-		../../thirdparty/rapidjson/include/rapidjson/internal/meta.h \
-		../../thirdparty/rapidjson/include/rapidjson/internal/stack.h \
-		../../thirdparty/rapidjson/include/rapidjson/internal/swap.h \
-		../../thirdparty/rapidjson/include/rapidjson/internal/strtod.h \
-		../../thirdparty/rapidjson/include/rapidjson/internal/ieee754.h \
-		../../thirdparty/rapidjson/include/rapidjson/internal/biginteger.h \
-		../../thirdparty/rapidjson/include/rapidjson/internal/diyfp.h \
-		../../thirdparty/rapidjson/include/rapidjson/internal/pow10.h \
-		../../thirdparty/rapidjson/include/rapidjson/error/error.h \
-		../../thirdparty/rapidjson/include/rapidjson/internal/strfunc.h \
-		../../FDJson/include/FDJson/JsonSerializer.h \
-		../../FDJson/include/FDJson/Json_fwd.h \
-		../../FDJson/include/FDJson/Json_array_fwd.h \
-		../../FDJson/include/FDJson/Json_list_fwd.h \
-		../../FDJson/include/FDJson/Json_tuple_fwd.h \
-		../../FDJson/include/FDJson/Json_set_fwd.h \
-		../../FDJson/include/FDJson/Json_map_fwd.h \
-		../../FDJson/test/test_array.h \
-		../../FDJson/include/FDJson/Json_array.h \
-		../../FDJson/test/test_list.h \
-		../../FDJson/include/FDJson/Json_list.h \
-		../../FDJson/test/test_tuple.h \
-		../../FDJson/include/FDJson/Json_tuple.h \
-		../../FDJson/test/test_set.h \
-		../../FDJson/include/FDJson/Json_set.h \
-		../../FDJson/test/test_map.h \
-		../../FDJson/include/FDJson/Json_map.h \
-		../../FDJson/test/test_custom.h \
-		../../FDJson/include/FDJson/Json_utils.h \
-		../../thirdparty/rapidjson/include/rapidjson/filereadstream.h
+		../../FDCore/include/FDCore/FileUtils.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../build/obj/FDSerialize_test/main.o main.cpp
 
 ####### Install
