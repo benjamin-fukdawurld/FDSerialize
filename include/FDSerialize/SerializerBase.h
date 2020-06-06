@@ -30,7 +30,7 @@ namespace FDSerialize
             }
 
             template<typename T>
-            void *getUserDataAs() const
+            T *getUserDataAs() const
             {
                 return reinterpret_cast<T*>(m_userData);
             }

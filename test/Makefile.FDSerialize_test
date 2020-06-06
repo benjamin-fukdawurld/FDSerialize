@@ -713,6 +713,7 @@ compiler_clean:
 		../../thirdparty/rapidjson/include/rapidjson/msinttypes/inttypes.h \
 		../../FDJson/include/FDJson/FDJson.h \
 		../include/FDSerialize/SerializerBase.h \
+		../../FDCore/include/FDCore/Macros.h \
 		../../FDJson/include/FDJson/JsonSerializer.h \
 		../../FDJson/include/FDJson/Json_fwd.h \
 		../../FDJson/include/FDJson/Json_array_fwd.h \
@@ -749,7 +750,7 @@ compiler_clean:
 		../../FDJson/test/test_map.h \
 		../../FDJson/include/FDJson/Json_map.h \
 		../../FDJson/test/test_custom.h \
-		../../FDJson/include/FDJson/Json_utils.h \
+		../../FDJson/include/FDJson/Json.h \
 		../../FDXml/test/FDXml_test.h \
 		../../FDXml/test/test_primitive.h \
 		../../FDXml/include/FDXml/Xml_primitive_fwd.h \
@@ -779,7 +780,6 @@ compiler_clean:
 		../../FDXml/test/test_custom.h \
 		../../FDXml/include/FDXml/Xml_utils.h \
 		../../FDXml/include/FDXml/Xml_map.h \
-		../../thirdparty/rapidxml/rapidxml_print.hpp \
 		../../FDCore/include/FDCore/FileUtils.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../../build/obj/FDSerialize_test/main.o main.cpp
 
